@@ -24,7 +24,7 @@
                <children>
                    <Button fx:id="IniciarSesionButton" layoutX="45.0" layoutY="347.0" onAction="#IniciarSesion" prefHeight="36.0" prefWidth="283.0" text="Iniciar Sesion" />
                
-                            <Label fx:id="LabelPostQuery" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="283.0" prefHeight="52.0" prefWidth="283.0">
+                            <Label fx:id="LabelPostQuery" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="283.0" prefHeight="52.0" prefWidth="283.0" textFill="830009">
                      <font>
                         <Font size="15.0" />
                      </font></Label>

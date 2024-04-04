@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.BoxBlur?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1540.0" stylesheets="@gui/app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omega.sgb.control.ControlCrearCuenta">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1540.0" stylesheets="@gui/app.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omega.sgb.control.ControlCrearCuenta">
    <children>
       <Pane fx:id="blurPane" prefHeight="800.0" prefWidth="1540.0" />
       <ImageView fx:id="blur" fitHeight="870.0" fitWidth="1639.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
@@ -37,7 +32,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="Contraseñatxt" layoutX="52.0" layoutY="366.0" prefHeight="42.0" prefWidth="198.0" promptText="Contraseña">
+            <PasswordField fx:id="Contraseñatxt" layoutX="52.0" layoutY="433.0" prefHeight="42.0" prefWidth="198.0" promptText="Contraseña">
                <font>
                   <Font size="14.0" />
                </font>
@@ -52,13 +47,12 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Cedulatxt" layoutX="52.0" layoutY="432.0" prefHeight="42.0" prefWidth="198.0" promptText="Cedula">
+            <TextField fx:id="Cedulatxt" layoutX="52.0" layoutY="366.0" prefHeight="42.0" prefWidth="424.0" promptText="Cedula">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Label fx:id="LabelCC" alignment="CENTER" layoutX="52.0" layoutY="497.0" prefHeight="63.0" prefWidth="424.0" textAlignment="CENTER" textFill="#830009"
-                   wrapText="true">
+            <Label fx:id="LabelCC" alignment="CENTER" layoutX="52.0" layoutY="497.0" prefHeight="63.0" prefWidth="424.0" textAlignment="CENTER" textFill="#830009" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font></Label>
@@ -67,7 +61,7 @@
                   <Font name="Roboto Light" size="35.0" />
                </font>
             </Label>
-            <PasswordField fx:id="ContraseñatxtConfirm" layoutX="278.0" layoutY="366.0" prefHeight="42.0" prefWidth="198.0" promptText="Confirmar contraseña">
+            <PasswordField fx:id="ContraseñatxtConfirm" layoutX="278.0" layoutY="433.0" prefHeight="42.0" prefWidth="198.0" promptText="Confirmar contraseña">
                <font>
                   <Font size="14.0" />
                </font>
@@ -82,7 +76,7 @@
                   <Image url="@gui/add_user.png" />
                </image>
             </ImageView>
-            <Button fx:id="VolverButton" layoutX="52.0" layoutY="577.0" mnemonicParsing="false" onAction="#ToLoginView" prefHeight="42.0" prefWidth="123.0" text="Volver a inicio">
+            <Button fx:id="VolverButton" layoutX="52.0" layoutY="577.0" mnemonicParsing="false" onAction="#ToLoginView" prefHeight="42.0" prefWidth="123.0" text="Volver a Login">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -95,7 +89,6 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <ComboBox fx:id="TipoCuentaBox" layoutX="278.0" layoutY="432.0" prefHeight="42.0" prefWidth="198.0" promptText="Tipo de Cuenta" />
          </children>
       </Pane>
    </children>

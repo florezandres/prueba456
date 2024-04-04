@@ -1,4 +1,4 @@
 package omega.sgb.dominio;
 
-public class Libro {
+public class LibroFisico {
 }

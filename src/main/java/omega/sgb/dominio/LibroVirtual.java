@@ -1,4 +1,4 @@
 package omega.sgb.dominio;
 
-public class MetodoPago {
+public class LibroVirtual {
 }

@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,10 +17,10 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ControlCrearCuenta implements Initializable {
+public class ControlCrearCuenta{
 
     private ControlLogin LC = new ControlLogin();
-    public String css = this.getClass().getResource("/gui/app.css").toExternalForm();
+    public String css = this.getClass().getResource("/omega/sgb/view/gui/app.css").toExternalForm();
 
     private Stage stage;
     private Scene scene;
@@ -38,13 +39,6 @@ public class ControlCrearCuenta implements Initializable {
     TextField Apellidotxt;
     @FXML
     TextField Cedulatxt;
-    @FXML
-    ComboBox<String> TipoCuentaBox;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        TipoCuentaBox.getItems().addAll("Bibliotecario","Lector");
-    }
 
     public void ToLoginView(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/omega/sgb/view/login-view.fxml"));
@@ -66,25 +60,29 @@ public class ControlCrearCuenta implements Initializable {
         String Nombre = Nombretxt.getText();
         String Apellido = Apellidotxt.getText();
         String Cedula = Cedulatxt.getText();
-        String TipoCuenta = TipoCuentaBox.getValue();
+        String TipoCuenta = "Lector";
 
-        TipoCuenta();
         Cedula();
         Contraseña();
         Usuario();
         Apellido();
         Nombre();
 
-        if(Boolean.valueOf(Nombre() == false || Apellido() == false || Usuario() == false || Contraseña() == false  || Cedula() == false || TipoCuenta() == false)) {
+        if(Boolean.valueOf(Nombre() == false || Apellido() == false || Usuario() == false || Contraseña() == false  || Cedula() == false || !TipoCuenta.equals("Lector"))) {
             run = false;
+            String hexColor = "#830009";
+            Color color = Color.web(hexColor);
+            LabelCC.setTextFill(color);
+            System.out.println("RUN="+Boolean.valueOf(run));
         }
         System.out.println("RUN="+Boolean.valueOf(run));
-        /*
         if(run == true){
+            LabelCC.setTextFill(Color.GREEN);
+            LabelCC.setText("Cuenta creada!");
+            /* Codigo a implementar con la clase SQL -> Conexion a la base de datos
             SQL.Crear_Cuenta(Usuario,Contraseña,Nombre,Apellido,Correo,TipoCuenta);
-            ToConfirmarCuentaView(event);
+            */
         }
-         */
     }
 
     public boolean ValidarUsuario(String Usuario){
@@ -112,7 +110,7 @@ public class ControlCrearCuenta implements Initializable {
         else if(ValidarUsuario(Usuario)==true) {
             return true;
         }
-        /*
+        /* Codigo a implementar con la clase SQL -> Conexion a la base de datos
         else if(ValidarUsuario(Usuario)==true && SQL.ValidarUsuarioSQL(Usuario)==false){
             return true;
         }
@@ -188,20 +186,6 @@ public class ControlCrearCuenta implements Initializable {
 
         else{
             LabelCC.setText("Ingrese una cedula valida.");
-            return true;
-        }
-    }
-    public boolean TipoCuenta(){
-        if(TipoCuentaBox.getValue()==null || TipoCuentaBox.getValue().equals("")){
-            LabelCC.setText("El tipo de cuenta no puede quedar vacio.");
-            return false;
-        }
-        else if(TipoCuentaBox.getValue().equals("Lector")||TipoCuentaBox.getValue().equals("Bibliotecario")){
-            LabelCC.setText("Redirigiendo...");
-            return true;
-        }
-        else{
-            LabelCC.setText("El tipo de cuenta no es correcto.");
             return true;
         }
     }

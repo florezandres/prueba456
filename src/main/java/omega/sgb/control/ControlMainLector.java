@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControlMainLector implements Initializable {
-    public String css = this.getClass().getResource("/gui/app.css").toExternalForm();
+    public String css = this.getClass().getResource("/omega/sgb/view/gui/app.css").toExternalForm();
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -33,8 +33,8 @@ public class ControlMainLector implements Initializable {
     }
 
     public void BuscarLibros(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("nada.fxml"));
-        root = loader.load();
+    //    FXMLLoader loader = new FXMLLoader(getClass().getResource("nada.fxml"));
+    //    root = loader.load();
         stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         scene.getStylesheets().add(css);
@@ -75,18 +75,7 @@ public class ControlMainLector implements Initializable {
             stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
-            System.out.println("Logout Completed <- true");
-            System.out.println("Session ended successfully\n\n");
+            System.out.println("Logout true\n\n");
         }
-    }
-    public void GestionarCuenta(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCuenta-view.fxml"));
-        root = loader.load();
-        stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());
-        scene = new Scene(root);
-        scene.getStylesheets().add(css);
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
     }
 }

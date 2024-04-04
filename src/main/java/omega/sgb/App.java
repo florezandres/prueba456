@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class App extends Application {
     //configuracion visual del CSS
-    public String css = this.getClass().getResource("/gui/app.css").toExternalForm();
+    public String css = this.getClass().getResource("/omega/sgb/view/gui/app.css").toExternalForm();
     //public String css = this.getClass().getResource("/omega/sgb/view/gui/nada.css").toExternalForm();
 
 
